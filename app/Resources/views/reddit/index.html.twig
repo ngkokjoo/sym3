@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Hello
+{% endblock %}
+
+{% block body %}
+
+    <ul>
+        {% for redpost in redposts %}
+            <li>{{redpost.id}}</li>
+            <li>{{redpost.title}}</li>
+            <li>{{redpost.description}}</li>
+            <li>{{redpost.createdTime|date('Y-m-d')}}</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

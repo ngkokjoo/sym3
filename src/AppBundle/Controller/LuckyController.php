@@ -5,6 +5,14 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\AppBundle\Entity\post;
+
+// $event = new post();
+// $event->setName("John");
+// $event->setTime(new \Datetime);
+// $event->setLocation("Kg Valdor");
+// $event->setDetails("Hometown");
+// $event->setNumber("1");
 
 class LuckyController extends Controller
 {
@@ -32,6 +40,8 @@ class LuckyController extends Controller
                 'hours'=> 3
             )
         );
+
+
 
         //replace this example code with whatever you need
         return $this->render('lucky/number.html.twig', [
