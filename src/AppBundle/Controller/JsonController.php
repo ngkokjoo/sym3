@@ -15,8 +15,7 @@ class JsonController extends Controller
 
     public function indexAction(Request $request)
     {
-        //$number = rand(0,100);
-        //replace this example code with whatever you need
+        // JSON example STARTED
         $data = [
             'name'=>'Ng Kok Joo',
             'firstname'=>'Ng',
@@ -24,11 +23,10 @@ class JsonController extends Controller
         ];
 
         $json = json_encode($data);
-        return new Response($json);
+        $response = new Response($json);
+        $response->headers->set('content-type','application/json');
 
-        return $this->render('Json/Json.html.twig', [
-            //'number' => $number,
-            //'name' => $name,
-        ]);
+        return $response;
+        // JSON example ENDED
     }
 }

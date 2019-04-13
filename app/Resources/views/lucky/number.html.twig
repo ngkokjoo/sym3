@@ -1,3 +1,45 @@
 {# app/Resources/views/lucky/number.html.twig #}
 
-<h1>Your lucky number is {{number}}, {{name}} !<h1>
+{#
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Lucky Number App
+{% endblock %}
+
+{% block body %}
+    {% for i in 1..10%}
+    <h1>Your lucky number is {{ number }}, {{ name|upper }} !<h1>
+    {% endfor %}
+{% endblock %}
+#}
+
+{# ---------------------------Compare Top (without twig) with Btm (with twig)------------------------------ #}
+
+{% extends 'base.html.twig' %}
+
+{% block title 'Lucky Number App' %}
+
+{% block body %}
+    {% for i in 1..5%}
+    <h1>Your lucky number is {{ number }}, {{ name|upper }} !<h1>
+    {% endfor %}
+
+    {# ---------- if else statement ---------------#}
+    <h1>Number of items in Array = {{arr|length}} !<h1>
+
+    {% if arr|length == 4 or arr[0] == 'one' %}
+        <h1>True</h1>
+    {% elseif arr[1] == 'two' %}
+        <h1>True (semi)</h1>
+    {% else %}
+        <h1>False</h1>
+    {% endif %}
+
+
+    {# ----------- for in loop object ---------------#}
+    {% for workout in workouts %}
+        <div>{{workout.activity}}</div>
+    {% endfor %}
+
+{% endblock %}
